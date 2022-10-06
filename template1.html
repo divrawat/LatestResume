@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Template 1</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+ 
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<style>
+
+
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #1b1b1b;
+  
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+
+
+
+
+
+/* footer */
+.footer-dark {
+  padding:50px 0;
+  color:#f0f9ff;
+  background-color:#282d32;
+}
+
+.footer-dark h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-dark ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-dark ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
+}
+
+.footer-dark ul a:hover {
+  opacity:0.8;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item:not(.social) {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+.footer-dark .item.text {
+  margin-bottom:36px;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item.text {
+    margin-bottom:0;
+  }
+}
+
+.footer-dark .item.text p {
+  opacity:0.6;
+  margin-bottom:0;
+}
+
+.footer-dark .item.social {
+  text-align:center;
+}
+
+@media (max-width:991px) {
+  .footer-dark .item.social {
+    text-align:center;
+    margin-top:20px;
+  }
+}
+
+.footer-dark .item.social > a {
+  font-size:20px;
+  width:36px;
+  height:36px;
+  line-height:36px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+  margin:0 8px;
+  color:#fff;
+  opacity:0.75;
+}
+
+.footer-dark .item.social > a:hover {
+  opacity:0.9;
+}
+
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
+}
+
+
+/* Footer */
+
+
+
+
+
+
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        
+    }
+    #contain{
+
+width: 90%;
+margin-left: 25px;
+margin-right: 25px;
+/* border: 1px solid black; */
+font-size: 19px;
+
+}
+
+input{
+  outline-style: none;
+  font-size: 13px;
+  padding: 5PX;
+}
+
+/* textarea:hover{
+  border: none;
+} */
+textarea{
+  outline-style: none;
+  padding: 5PX;
+}
+
+::placeholder {
+  /* font-style: italic; */
+  font-size: 13px;
+  
+  /* color: mintcream; */
+  /* background: thistle; */
+  padding: 2px;
+  
+}
+
+.column1 {
+    
+  float: left;
+  width: 29.5%;
+  padding: 10px;
+  height: 780px; 
+  border: 0.1px solid black;
+  
+  
+ 
+}
+.column2 {
+  float: left;
+  width: 70.5%;
+  padding: 10px;
+  padding-left: 20px;
+  height: 780px; 
+  border-right: 0.5px solid black;
+  border-bottom: 0.5px solid black;
+  border-top: 0.1px solid black;
+}
+.previewA1 {
+  margin-left: 0%;
+  float: left;
+  width: 29.5%;
+  padding: 10px;
+  height: 730px; 
+  justify-content: center;
+  padding-left: 14px;
+  padding-top: 15px;
+  padding-right: 10px;
+  /* padding-top: 15px; */
+  
+}
+.previewA2 {
+  float: left;
+  width: 70.5%;
+  padding: 10px;
+  padding-left: 20px;
+  height: 730px; 
+  
+  
+}
+
+.container{
+  /* box-shadow: rgba(0,0,0,19) 0px 10px 20px, rgba(0,0,0,0.23) 0px 6px 6px; */
+  margin-left: 30px;
+  width: 65%;
+}
+
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#container1{
+  margin-left: 30px;
+  width: 65%;
+  display: flexbox;
+  
+}
+#container1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.navbar{
+background-color: black;
+}
+.nav-link {
+  color: orange;
+}
+.navbar-brand{
+  color: #fff;
+}
+.nav-link:hover {
+  color: rgb(162, 218, 240);
+}
+.navbar-brand:hover{
+  color:rgb(230, 125, 87);
+}
+
+textarea {	 
+-webkit-box-sizing: border-box; 
+-moz-box-sizing: border-box; 
+box-sizing: border-box;	 
+width: 95%;
+max-height: 35%;} 
+
+.input1 {	 
+-webkit-box-sizing: border-box; 
+-moz-box-sizing: border-box; 
+box-sizing: border-box;	 
+max-width: 80%;
+max-height: 30px;
+} 
+
+    
+    #photo{
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        
+    }
+    #photo1{
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        
+    }
+    
+    #file{
+        display: none;
+    }
+    
+    #uploadBtn{
+        height: 40px;
+        width: 40%;
+        /* position: absolute; */
+        display: block;
+        bottom: 0;
+        left: 50%;
+        top: 1%;
+        transform: translateX(-50%);
+        text-align: center;
+        background: black;
+        color: orange;
+        letter-spacing: 0.6px;
+        line-height: 40px;
+        font-family: sans-serif;
+        font-size: 15px;
+        cursor: pointer;
+        position: relative;
+        border-radius: 10px;
+    } 
+    #uploadBtn:hover{
+      color: white;
+    }
+
+#downloadcv{
+  color: orange;
+  background-color: black;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 25px;
+  width: 13%;
+  font-size: 25px;
+  margin-bottom: 25PX;
+}
+
+#downloadcv:hover{
+  color: rgb(114, 196, 243);
+}
+
+#skills3,#skills5,#project3,#project5{
+  margin-left: 10px;
+}
+#skills1,#skills2,#skills3,#skills4,#skills5,#skills6{
+  width: 120px;
+}
+#project1,#project2,#project3,#project4,#project5,#project6{
+  width: 120px;
+}
+#about{
+    text-align: center;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+@media  (min-width: 771px) and (max-width: 997px)   {
+     .column1{
+       height: 770px;
+     }
+     .column2{
+       height: 770px;
+     }
+     .preview1{
+       height: 770px;
+     }
+     .preview2{
+       height: 770px;
+     }
+     #downloadcv{
+    width: 140px;
+  }
+}
+
+@media  (min-width: 421px) and (max-width: 770px)  {
+                .column1,.column2{
+                          height: 800px;
+                }
+                #downloadcv{
+    width: 140px;
+  }
+  #skills4,#project4{
+    margin-left: 10px;
+  }
+}
+
+
+
+
+@media  (min-width: 370px) and (max-width: 945px)  {
+                .container,#container1{
+                  width: 99%;
+                  margin: 3px;
+                  padding: 0px;
+                }
+              
+              }
+
+
+
+@media  (min-width: 360px) and (max-width: 421px)  {
+
+.column1,.column2{
+  height: 820px;
+}
+
+#skills4,#project4{
+  margin-left: 10px;
+}
+
+#skills1,#skills2,#skills3,#skills4,#skills5,#skills6{
+  width: 70px;
+}
+#project1,#project2,#project3,#project4,#project5,#project6{
+  width: 70px;
+}
+
+#project4,#skills4{
+  margin-left: 0px;
+}
+#project5,#skills5{
+  margin-left: 10px;
+}
+
+.previewA1,.previewA2  {
+         height: 1000px;
+}
+#container1{
+  height: 1050px;
+}
+
+  }
+
+@media  (min-width: 422px) and (max-width: 769px)  {
+
+  #skills3,#skills5,#project3,#project5{
+  margin-left: 0px;
+  
+}
+  
+
+  }
+                             
+
+@media  (min-width: 370px) and (max-width: 450px)  {
+               .expheading{
+                 font-size: 16px;
+                 
+               }
+               #expheading2{
+                 font-size: 16px;
+                 
+               }
+}
+@media  (min-width: 370px) and (max-width: 760px)  {
+  #uploadBtn{
+    width: 80px;
+  }
+  #downloadcv{
+    width: 140px;
+  }
+  #getproject3,#getproject6,#getskills3,#getskills6{
+  margin-top: 20px;
+  margin-left: 0px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+  <nav>
+    <div class="logo">
+       CV Builder
+    </div>
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+       <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+       <li><a  href="index.html">Home</a></li>
+       <li><a  class="active" href="template.html">Templates</a></li>
+       <li><a href="about.html">About</a></li>
+       
+       <li><a href="features.html">Features</a></li>
+       <li><a href="tips.html">Tips</a></li>
+    </ul>
+ </nav>
+
+<!-- heading -->
+<!-- heading -->
+<h1 style="text-align: center; margin-top: 25px; margin-bottom: 25px; font-family: sans-serif;">Make Resume For Free</h1>
+
+<!-- COLUMN 1 -->
+
+
+<!-- Upload Photo -->
+<div class="container">
+  <div class="column1" style="background-color:#fff;">
+
+    
+      <div style="display: flex; justify-content: center;">
+      <img src="image.jpg" id="photo"></div>
+      <input type="file" id="file">
+    <label for="file" id="uploadBtn">Upload</label>
+    
+
+<!-- <div class="centerbtn" id="upload" style="justify-content: center; display: flex; margin-bottom: 10px;"><button style="cursor: pointer; margin-top: 10px;;">Upload Photo</button></div> -->
+
+<!-- Name -->
+<DIV><input type="text" class="input1" placeholder="Full Name" id="name" style="margin-top: 10px; width: 200px; height: 25px;"></DIV>
+<div><input type="text" class="input1" placeholder="Designation" id="designation" style="margin-top: 10px; width: 200px; height: 25px;"></DIV>
+<input type="text" class="input1" placeholder="Contact" id="contact" style="margin-top: 10px; width: 200px; height: 25px;">
+<hr > 
+
+<textarea style="margin-top: 5px; " name="" id="description" cols="22" rows="6" placeholder="Write somethings about yourself"></textarea>
+
+<!-- basic knowledge -->
+<hr > 
+<h5 style="font-weight: 600;" class="expheading">Experience</h5>
+<textarea  name=""  cols="22" rows="6" id="exp" placeholder="Share your job experience or internship experience here"></textarea>
+
+</div>
+
+
+
+
+  <!-- column 2 -->
+  <div class="column2" style="background-color:#fff;">
+
+    <!-- EDUCATION -->
+
+    <h5 style="font-weight: 600;">Education</h5>
+    <div>
+    <input type="text" class="input1" placeholder="Course & Degree" id="degree" style=" width: 250px; height: 30px;">
+  </div>
+    <input type="text" class="input1" placeholder="College & University" id="college" style="margin-top: 15px; width: 250px; height: 30px;">  
+    
+
+
+    <!-- CGPA -->
+    <DIV>
+    <div  style="display: inline-block; font-weight: 600;">CGPA : </div><input type="text" class="input1" placeholder="Marks" id="cgpa" style="margin-top: 15px; margin-left: 10px; width: 100px; height: 30px;">  
+  </DIV>
+    <hr >
+
+    <!-- Skills Expertize -->
+    <h5 style="font-weight: 600;">Skills & Expertize</h5>
+
+    <input type="text" id="skills1" placeholder="Skill 1" style="  height: 30px;"> <input type="text" id="skills2" placeholder="Skill 2" style="margin-left: 5px;  height: 30px;"><input type="text" id="skills3" class="input2" placeholder="Skill 3" style="margin-top: 10px;  height: 30px;">
+  <input type="text" id="skills4" placeholder="Skill 4" style="  height: 30px;"><input type="text" id="skills5"  placeholder="Skill 5" style="margin-top: 10px;  height: 30px; "><input type="text"  id="skills6" placeholder="Skill 6" style="margin-top: 10px;  height: 30px; margin-left: 10px;">
+   
+    <textarea name="" id="addskills" cols="45" rows="5" placeholder="Additional Skills of yours if have any" style="margin-top: 10px;"></textarea>
+    <hr >
+
+    <!-- Projects -->
+    <h5 style="font-weight: 600;">Projects</h5>
+    <input type="text" id="project1" placeholder="Project 1" style="  height: 30px;"> <input type="text" id="project2" placeholder="Project 2" style="margin-left: 5px;  height: 30px;"><input type="text" id="project3" class="input2" placeholder="Project 3" style="margin-top: 10px;  height: 30px;">
+     <input type="text" id="project4" placeholder="Project 4" style="  height: 30px;"><input type="text" id="project5"  placeholder="Project 5" style="margin-top: 10px;  height: 30px; "><input type="text"  id="project6" placeholder="Project 6" style="margin-top: 10px; height: 30px; margin-left: 10px;">
+
+    
+    <textarea name="" id="descproject" cols="45" rows="4" placeholder="More projects or description of the above projects" style="margin-top: 10px;"></textarea>
+</div>
+
+</div>
+
+<!-- Preview -->
+<h1 style="text-align: center; margin-top: 25PX; margin-bottom:25px ;">Preview</h1>
+<div  id="container1">
+
+<!-- COLUMN 1 -->
+<div class="previewA1" style="background-color: rgb(32, 53, 54); ">
+
+  <div style="display: flex; justify-content: center;">
+    <img src="image.jpg" id="photo1">
+  </div>
+    <!-- <input type="file" id="file"> -->
+  <!-- <label for="file" id="uploadBtn">Upload</label> -->
+
+  
+  <div id="getname" style="margin-top: 10px; text-align: center; font-size: 19px; color: white;"></div>
+  <div id="getdesignation" style="margin-top: 10px; text-align: center;  font-size: 16px; color:white;"></div>
+  <div id="getcontact" style="margin-top: 10px; text-align: center;  font-size: 16px; color:white;"></div>
+  
+  <hr style="margin-top: 10px;">
+  <div style="width: 50%; flex: wrap;">
+  <div id="getdescription" style="margin-top: 10px; width: 180%; font-size: 15px; color: white; letter-spacing: 0.8px;"></div>
+</div>
+  <hr style="margin-top: 18px;"> 
+  <h5 style="font-weight: 550;  color:rgb(107, 139, 207);" id="expheading2">Experience</h5>
+  <!-- color: rgb(101, 184, 108); -->
+  <hr style="margin-top: 10px;">
+  <div id="getexp" style="margin-top: 10px; width: 95%; font-size: 15px; color: white; letter-spacing: 0.8px;" ></div>
+
+  
+</div>
+
+
+<!-- column 2 -->
+<div class="previewA2" style="background-color:rgb(236, 233, 233)">
+  <h5 style="font-weight: 650; font-size: 22px; color: rgb(53, 27, 87);">Education</h5>
+ 
+<div id="getdegree" style="display: inline; font-weight: 550;"></div>
+
+
+<div id="getcollege" style="font-weight: 550;"></div>
+<div  style="display: inline; font-weight: 600; color: rgb(53, 27, 87);">CGPA : </div>
+<div id="getcgpa" style="display: inline; "></div>
+
+
+<hr >
+    <h5 style="margin-bottom: 18px; font-weight: 600; color: rgb(53, 27, 87);">Skills & Expertize</h5>
+
+
+<div style="margin-top: 25px;">
+  <button id="getskills1" style="letter-spacing: 0.8px; font-size: 16px; display: inline-block; padding: 5px; border-radius: 7px; color: orange; background-color: black;"></button>
+  <button id="getskills2" style="letter-spacing: 0.8px; font-size: 16px; display: inline-block; padding: 5px; border-radius: 7px; color: orange; background-color: black;"></button>
+  <button id="getskills3" style="letter-spacing: 0.8px; font-size: 16px; display: inline-block; padding: 5px; border-radius: 7px; color: orange; background-color: black;"></button>
+</div>
+<div style="margin-top: 25px; ">
+  <button id="getskills4" style="letter-spacing: 0.8px; font-size: 16px; display: inline-block; padding: 5px; border-radius: 7px; color: orange; background-color: black;"></button>
+  <button id="getskills5" style="letter-spacing: 0.8px; font-size: 16px; display: inline-block; padding: 5px; border-radius: 7px; color: orange; background-color: black;"></button>
+  <button id="getskills6" style="letter-spacing: 0.8px; font-size: 16px; display: inline-block; padding: 5px; border-radius: 7px; color: orange; background-color: black;"></button>
+</div>
+
+<div id="getaddskills" style="margin-top: 20px; font-size: 15px; letter-spacing: 0.8px;"></div>
+
+
+<hr >
+<h5 style="margin-bottom: 18px; font-weight: 600; color: rgb(53, 27, 87);">Projects</h5>
+
+
+
+
+
+
+
+
+<div style="margin-top: 20px; ">
+  <button id="getproject1" style="font-size: 16px; color: orange; background-color: black; letter-spacing: 0.8px; display: inline-block; padding: 5px; border-radius: 7px;"></button>
+  <button id="getproject2" style="font-size: 16px; color: orange; background-color: black; letter-spacing: 0.8px; display: inline-block; padding: 5px; border-radius: 7px;"></button>
+  <button id="getproject3" style="font-size: 16px; color: orange; background-color: black; letter-spacing: 0.8px; display: inline-block; padding: 5px; border-radius: 7px;"></button>
+</div>
+
+<div style="margin-top: 20px;">
+  <button id="getproject4" style="font-size: 16px; color: orange; background-color: black; letter-spacing: 0.8px; display: inline-block; padding: 5px; border-radius: 7px;"></button>
+  <button id="getproject5" style="font-size: 16px; color: orange; background-color: black; letter-spacing: 0.8px; display: inline-block; padding: 5px; border-radius: 7px;"></button>
+  <button id="getproject6" style="font-size: 16px; color: orange; background-color: black; letter-spacing: 0.8px; display: inline-block; padding: 5px; border-radius: 7px;"></button>
+</div>
+
+
+
+
+
+<div id="getdescproject" style="margin-top: 20px; letter-spacing: 0.8px;"></div>
+
+</div>
+
+</div>
+<div style="display: flex; justify-content: center; margin-top: 15px;">
+<button   id="downloadcv" >Download</button>
+</div>
+<!-- <h1 style="text-align: center; margin-top: 25px;">Thanks</h1> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer-dark">
+  <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-6 col-md-3 item">
+                  <h3>More Links</h3>
+                  <ul>
+                      <li><a href="template.html">Templates</a></li>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="tips.html">Tips</a></li>
+                  </ul>
+              </div>
+              <div class="col-sm-6 col-md-3 item">
+                  <h3>Useful Tips</h3>
+                  <ul>
+                      <li><a href="tips.html">Be short and Direct</a></li>
+                      <li><a href="tips.html">Highlight only relevant skills</a></li>
+                      <li><a href="tips.html">Optimize your text</a></li>
+                      <li><a href="tips.html">Craft a Career Screenshot</a></li>
+                      <li><a href="tips.html">Think beyond your job duties</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-6 item text">
+                  <h3>CV Builder</h3>
+                  <p>We provide you best Resume Templates available with our website. Users can just preview their resume templates while writing information on their CV.</p>
+              
+          <p class="copyright">CV Builder © 2022</p>
+      </div>
+  </footer>
+</div>
+
+
+
+
+
+
+
+<!-- Script -->
+
+<script>
+
+// Grabbing Elements
+
+Cname=document.getElementById("name");
+designation=document.getElementById("designation"); 
+contact=document.getElementById("contact"); 
+description=document.getElementById("description"); 
+exp=document.getElementById("exp"); 
+degree=document.getElementById("degree"); 
+
+
+college=document.getElementById("college"); 
+
+project1=document.getElementById("project1"); 
+project2=document.getElementById("project2"); 
+project3=document.getElementById("project3"); 
+project4=document.getElementById("project4"); 
+descproject=document.getElementById("descproject"); 
+
+
+skills1=document.getElementById("skills1"); 
+skills2=document.getElementById("skills2"); 
+skills3=document.getElementById("skills3"); 
+skills4=document.getElementById("skills4"); 
+addskills=document.getElementById("addskills"); 
+
+
+
+
+// Previewing using Input - Addeventlistener
+Cname.addEventListener("input",()=>{
+ document.getElementById("getname").innerText=Cname.value;
+});
+designation.addEventListener("input",()=>{
+  document.getElementById("getdesignation").innerText=designation.value;
+});
+contact.addEventListener("input",()=>{
+  document.getElementById("getcontact").innerText=contact.value;
+});
+description.addEventListener("input",()=>{
+  document.getElementById("getdescription").innerText=description.value;
+});
+exp.addEventListener("input",()=>{
+  document.getElementById("getexp").innerText=exp.value;
+});
+
+
+
+degree.addEventListener("input",()=>{
+  document.getElementById("getdegree").innerText=degree.value;
+});
+
+
+
+college.addEventListener("input",()=>{
+  document.getElementById("getcollege").innerText=college.value;
+});
+
+cgpa.addEventListener("input",()=>{
+  document.getElementById("getcgpa").innerText=cgpa.value;
+});
+
+
+
+skills1.addEventListener("input",()=>{
+  document.getElementById("getskills1").innerText=skills1.value;
+});
+skills2.addEventListener("input",()=>{
+  document.getElementById("getskills2").innerText=skills2.value;
+});
+skills3.addEventListener("input",()=>{
+  document.getElementById("getskills3").innerText=skills3.value;
+});
+skills4.addEventListener("input",()=>{
+  document.getElementById("getskills4").innerText=skills4.value;
+});
+skills5.addEventListener("input",()=>{
+  document.getElementById("getskills5").innerText=skills5.value;
+});
+skills6.addEventListener("input",()=>{
+  document.getElementById("getskills6").innerText=skills6.value;
+});
+addskills.addEventListener("input",()=>{
+  document.getElementById("getaddskills").innerText=addskills.value;
+});
+
+
+
+project1.addEventListener("input",()=>{
+  document.getElementById("getproject1").innerText=project1.value;
+});
+project2.addEventListener("input",()=>{
+  document.getElementById("getproject2").innerText=project2.value;
+});
+project2.addEventListener("input",()=>{
+  document.getElementById("getproject2").innerText=project2.value;
+});
+project3.addEventListener("input",()=>{
+  document.getElementById("getproject3").innerText=project3.value;
+});
+project4.addEventListener("input",()=>{
+  document.getElementById("getproject4").innerText=project4.value;
+});
+project5.addEventListener("input",()=>{
+  document.getElementById("getproject5").innerText=project5.value;
+});
+project6.addEventListener("input",()=>{
+  document.getElementById("getproject6").innerText=project6.value;
+});
+descproject.addEventListener("input",()=>{
+  document.getElementById("getdescproject").innerText=descproject.value;
+});
+
+
+const img = document.querySelector('#photo');
+const img2 = document.querySelector('#photo1');
+const file = document.querySelector('#file');
+
+file.addEventListener('change', function(){
+    //this refers to file
+    const choosedFile = this.files[0];
+    
+
+    if (choosedFile) {
+
+        const reader = new FileReader(); //FileReader is a predefined function of JS
+
+        reader.addEventListener('load', function(){
+            img.setAttribute('src', reader.result);
+            img2.setAttribute('src', reader.result);
+        });
+        reader.readAsDataURL(choosedFile);
+        
+    }
+});
+
+// Image Upload
+
+    $('#downloadcv').click(function(){
+    
+    
+       html2canvas($('#container1'), 
+        {
+          onrendered: function (canvas) {
+          var a = document.createElement('a');
+           // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+            a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+            a.download = 'Cv.jpg';
+          a.click();
+         
+         
+          }
+        });
+     
+       });
+
+
+  // $('#downloadcv').click(function(){
+    
+    
+  //   html2canvas(document.getElementById("container"),		
+  //   {
+	// 		allowTaint: true,
+	// 		useCORS: true
+	// 	})
+  //   .then(function (canvas) {
+  //       var a = document.createElement('a');
+  //      // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+  //       a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+  //       a.download = 'Cv.jpg';
+  //      a.click();
+       
+       
+  //     }
+  // )})
+
+
+  
+
+
+   
+
+
+
+</script>
+
+</body>
+</html>
